@@ -64,13 +64,13 @@ html = converter.convert(*image_path*)
 `img2html` 已经上传到了 [PYPI](https://pypi.python.org/pypi/img2html)，所以最简单的安装方式就是使用 pip：
 
 ```
-$ pip install xart
+$ pip install img2html
 ```
 
 更新：
 
 ```
-$ pip install xart --upgrade
+$ pip install img2html --upgrade
 ```
 
 
@@ -78,7 +78,7 @@ $ pip install xart --upgrade
 
 ```
 $ git clone git@github.com:xlzd/img2html.git
-$ cd xart
+$ cd img2html
 $ python setup.py install
 ```
 
@@ -86,7 +86,7 @@ $ python setup.py install
 ### License
 ---
 
-WTFPL ([here](https://github.com/xlzd/xart/blob/master/LICENSE))
+WTFPL ([here](https://github.com/xlzd/img2html/blob/master/LICENSE))
 
 
 [version-badge]:   https://img.shields.io/pypi/v/img2html.svg?label=version
