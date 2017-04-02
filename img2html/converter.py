@@ -23,6 +23,8 @@ TEMPLATE = '''
     <style type="text/css">
         body {
             margin: 0px; padding: 0px; line-height:100%; letter-spacing:0px; text-align: center;
+            min-width: {{width}}px;
+            width: auto !important;
             font-size: {{size}}px;
             background-color: #{{background}};
             font-family: {{font_family}};
@@ -93,7 +95,8 @@ class Img2HTMLConverter(object):
             size=self.font_size,
             background=self.background,
             title=self.title,
-            font_family=self.font_family
+            font_family=self.font_family,
+            width=self.font_size * len(html_image[0]) * 2
         )
 
     @staticmethod
