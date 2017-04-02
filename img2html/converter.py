@@ -18,6 +18,7 @@ HTMLImage = list
 TEMPLATE = '''
 <html>
 <head>
+    <meta charset="utf-8">
     <title>{{ title }}</title>
     <style type="text/css">
         body {
