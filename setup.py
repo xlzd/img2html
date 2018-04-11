@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='img2html',
-    version='0.0.5',
+    version='0.0.6',
     author='xlzd',
     author_email='i@xlzd.me',
     description='Convert image to HTML',
