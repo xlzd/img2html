@@ -77,7 +77,7 @@ $ pip install img2html --upgrade
 当然，你也可以通过源码安装：
 
 ```
-$ git clone git@github.com:xlzd/img2html.git
+$ git clone https://github.com/xlzd/img2html.git
 $ cd img2html
 $ python setup.py install
 ```
