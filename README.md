@@ -23,7 +23,7 @@
 
 原始图片             |  转换后
 :-------------------------:|:-------------------------:
-![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/before2.png)  |  ![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/after2.png)
+![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/before2.jpg)  |  ![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/after2.png)
 ![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/before.png)  |  ![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/after.png)
 
 ### 使用方式
