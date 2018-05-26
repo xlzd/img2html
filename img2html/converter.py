@@ -14,6 +14,10 @@ Pixel = namedtuple('Pixel', ['r', 'g', 'b'])
 RenderItem = namedtuple('RenderItem', ['color', 'char'])
 RenderGroup = list
 HTMLImage = list
+try:
+    xrange
+except NameError:
+    xrange = range
 
 TEMPLATE = '''
 <html>
@@ -53,7 +57,10 @@ def _progress_callback(percent):
         lca = getattr(_progress_callback, '_last_call_at', 0)
         if time.time() - lca > 0.1:
             _progress_callback._last_call_at = time.time()
-            sys.stdout.write('\r{} progress: {:.2f}%'.format(_c.next(), percent))
+            try:
+                sys.stdout.write('\r{} progress: {:.2f}%'.format(_c.next(), percent))
+            except:
+                sys.stdout.write('\r{} progress: {:.2f}%'.format(next(_c), percent))
             sys.stdout.flush()
 
 
@@ -70,7 +77,10 @@ class Img2HTMLConverter(object):
         self.title = title
         self.font_family = font_family
         if isinstance(char, str):
-            char = char.decode('utf-8')
+            try:
+                char = char.decode('utf-8')
+            except:
+                char = char.encode('utf-8').decode("utf-8")
         self.char = cycle(char)
         self._prg_cb = progress_callback or _progress_callback
 
@@ -97,7 +107,10 @@ class Img2HTMLConverter(object):
                         pixels.append(Pixel(*image.getpixel(point)[:3]))
                 average = self.get_average(pixels=pixels)
                 color = self.rgb2hex(average)
-                render_item = RenderItem(color=color, char=self.char.next())
+                try:
+                    render_item = RenderItem(color=color, char=self.char.next())
+                except:
+                    render_item = RenderItem(color=color, char=next(self.char))
                 render_group.append(render_item)
 
                 progress += step
