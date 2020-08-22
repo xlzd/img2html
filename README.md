@@ -62,6 +62,8 @@ html = converter.convert(*image_path*)
 ### 安装
 ---
 
+对于Python2.x来说
+
 `img2html` 已经上传到了 [PYPI](https://pypi.python.org/pypi/img2html)，所以最简单的安装方式就是使用 pip：
 
 ```
@@ -74,11 +76,10 @@ $ pip install img2html
 $ pip install img2html --upgrade
 ```
 
-
-当然，你也可以通过源码安装：
+对于Python3.x来说，由于作者没有适配Python3.x，因此应通过我写的源码安装：
 
 ```
-$ git clone https://github.com/xlzd/img2html.git
+$ git clone https://github.com/cocos56/img2html.git
 $ cd img2html
 $ python setup.py install
 ```
