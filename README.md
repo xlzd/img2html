@@ -18,18 +18,15 @@
 
 ### 示例
 
-转换后的 HTML 页面： [https://xlzd.me/hide/img2html/](https://xlzd.me/hide/img2html/)
-
-
 原始图片             |  转换后
 :-------------------------:|:-------------------------:
-![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/before2.jpg)  |  ![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/after2.png)
-![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/before.png)  |  ![](https://raw.githubusercontent.com/xlzd/img2html/master/demo/after.png)
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122243148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)|![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122129328.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122255159.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)|![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122141183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)
 ### 使用方式
 ---
 
 #### 命令行
+使用帮助：
 ```
 usage: img2html [-h] [-b #RRGGBB] [-s 4~30] [-c CHAR] [-t TITLE] [-f FONT] -i
                 IN [-o OUT]
@@ -46,43 +43,56 @@ optional arguments:
   -o OUT, --out OUT                 output file
 ```
 
+使用实例：
+直接在命令行中输入`img2html -i 图片路径 -o 网页路径`
+
+如：`img2html -i D:\before.png -o D:\index.html`
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822123102209.png#pic_center)
+
 
 #### 代码调用
 
 ```Python
 from img2html.converter import Img2HTMLConverter
+import codecs
 
-converter = Img2HTMLConverter(*some config here*)
-html = converter.convert(*image_path*)
-
-# done, so easy.
+converter = Img2HTMLConverter()
+html = converter.convert(r'D:\before.png')
+with codecs.open(r'D:\index.html', 'wb', encoding='utf-8') as fp:
+    fp.write(html)
 ```
 
 
 ### 安装
 ---
+对于Python3.x来说，由于作者没有适配Python3.x，因此应通过我写的源码安装：
+
+```
+git clone https://github.com/cocos56/img2html.git
+cd img2html
+python setup.py install
+```
+
+
+对于Python2.x来说
 
 `img2html` 已经上传到了 [PYPI](https://pypi.python.org/pypi/img2html)，所以最简单的安装方式就是使用 pip：
 
 ```
-$ pip install img2html
+pip install img2html
 ```
 
 更新：
 
 ```
-$ pip install img2html --upgrade
+pip install img2html --upgrade
 ```
 
-
-当然，你也可以通过源码安装：
-
+卸载：
 ```
-$ git clone https://github.com/xlzd/img2html.git
-$ cd img2html
-$ python setup.py install
+pip uninstall img2html
 ```
-
 
 ### License
 ---
