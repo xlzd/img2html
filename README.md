@@ -88,6 +88,11 @@ $ pip install img2html
 $ pip install img2html --upgrade
 ```
 
+卸载：
+```
+pip uninstall img2html
+```
+
 ### License
 ---
 
