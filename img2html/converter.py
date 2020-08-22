@@ -53,14 +53,14 @@ def _progress_callback(percent):
         lca = getattr(_progress_callback, '_last_call_at', 0)
         if time.time() - lca > 0.1:
             _progress_callback._last_call_at = time.time()
-            sys.stdout.write('\r{} progress: {:.2f}%'.format(_c.next(), percent))
+            sys.stdout.write('\r{} progress: {:.2f}%'.format(_c.__next__(), percent))
             sys.stdout.flush()
 
 
 class Img2HTMLConverter(object):
     def __init__(self,
                  font_size=10,
-                 char='䦗',
+                 char='爱',
                  background='#000000',
                  title='img2html by xlzd',
                  font_family='monospace',
@@ -69,8 +69,8 @@ class Img2HTMLConverter(object):
         self.background = background
         self.title = title
         self.font_family = font_family
-        if isinstance(char, str):
-            char = char.decode('utf-8')
+        # if isinstance(char, str):
+        #     char = char.decode('utf-8')
         self.char = cycle(char)
         self._prg_cb = progress_callback or _progress_callback
 
@@ -85,19 +85,19 @@ class Img2HTMLConverter(object):
         progress = 0.0
         step = 1. / (col_blocks * row_blocks)
 
-        for col in xrange(col_blocks):
+        for col in range(col_blocks):
             render_group = RenderGroup()
-            for row in xrange(row_blocks):
+            for row in range(row_blocks):
                 pixels = []
-                for y in xrange(self.font_size):
-                    for x in xrange(self.font_size):
+                for y in range(self.font_size):
+                    for x in range(self.font_size):
                         point = Point(row * self.font_size + x, col * self.font_size + y)
                         if point.x >= width or point.y >= height:
                             continue
                         pixels.append(Pixel(*image.getpixel(point)[:3]))
                 average = self.get_average(pixels=pixels)
                 color = self.rgb2hex(average)
-                render_item = RenderItem(color=color, char=self.char.next())
+                render_item = RenderItem(color=color, char=self.char.__next__())
                 render_group.append(render_item)
 
                 progress += step
