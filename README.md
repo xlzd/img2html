@@ -20,8 +20,8 @@
 
 原始图片             |  转换后
 :-------------------------:|:-------------------------:
-![](https://github.com/cocos56/img2html/blob/master/demo/before.png)  |  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122129328.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)
-![](https://github.com/cocos56/img2html/blob/master/demo/before2.png)  |  ![](https://github.com/cocos56/img2html/blob/master/demo/after2.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122243148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)|![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122129328.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122255159.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)|![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822122141183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NPQ081Ng==,size_16,color_FFFFFF,t_70#pic_center)
 ### 使用方式
 ---
 
@@ -57,6 +57,14 @@ html = converter.convert(*image_path*)
 
 ### 安装
 ---
+对于Python3.x来说，由于作者没有适配Python3.x，因此应通过我写的源码安装：
+
+```
+$ git clone https://github.com/cocos56/img2html.git
+$ cd img2html
+$ python setup.py install
+```
+
 
 对于Python2.x来说
 
@@ -71,15 +79,6 @@ $ pip install img2html
 ```
 $ pip install img2html --upgrade
 ```
-
-对于Python3.x来说，由于作者没有适配Python3.x，因此应通过我写的源码安装：
-
-```
-$ git clone https://github.com/cocos56/img2html.git
-$ cd img2html
-$ python setup.py install
-```
-
 
 ### License
 ---
