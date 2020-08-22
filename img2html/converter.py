@@ -69,8 +69,6 @@ class Img2HTMLConverter(object):
         self.background = background
         self.title = title
         self.font_family = font_family
-        # if isinstance(char, str):
-        #     char = char.decode('utf-8')
         self.char = cycle(char)
         self._prg_cb = progress_callback or _progress_callback
 
