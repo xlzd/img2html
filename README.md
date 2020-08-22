@@ -55,11 +55,12 @@ optional arguments:
 
 ```Python
 from img2html.converter import Img2HTMLConverter
+import codecs
 
-converter = Img2HTMLConverter(*some config here*)
-html = converter.convert(*image_path*)
-
-# done, so easy.
+converter = Img2HTMLConverter()
+html = converter.convert(r'D:\before.png')
+with codecs.open(r'D:\index.html', 'wb', encoding='utf-8') as fp:
+    fp.write(html)
 ```
 
 
