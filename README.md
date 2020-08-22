@@ -26,6 +26,7 @@
 ---
 
 #### 命令行
+使用帮助：
 ```
 usage: img2html [-h] [-b #RRGGBB] [-s 4~30] [-c CHAR] [-t TITLE] [-f FONT] -i
                 IN [-o OUT]
@@ -41,6 +42,10 @@ optional arguments:
   -i IN, --in IN                    image to convert
   -o OUT, --out OUT                 output file
 ```
+
+使用实例：
+直接在命令行中输入`img2html -i 图片路径 -o 网页路径`
+如：`img2html -i D:\before4.png -o D:\index.html`
 
 
 #### 代码调用
