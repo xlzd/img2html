@@ -46,7 +46,7 @@ optional arguments:
 使用实例：
 直接在命令行中输入`img2html -i 图片路径 -o 网页路径`
 
-如：`img2html -i D:\before4.png -o D:\index.html`
+如：`img2html -i D:\before.png -o D:\index.html`
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200822123102209.png#pic_center)
 
